@@ -1,25 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//: ÀÛ¼ºÀÛ :sy
-//: csvÀÇ data¸¦ ÀÌ°÷ÀÇ µ¥ÀÌÅÍ º¯¼ö¿¡ ÀüºÎ ´ã¾ÆµÎ´Â Å¬·¡½º...
-public class GameTableData
+
+
+//ëª¨ë“  ë°ì´í„°ë“¤ì€ í•´ë‹¹ ë°ì´í„°ë“¤ì„ ìƒì†ë°›ìŒ...
+public class BaseData 
 {
-    public Dictionary<int, Unit_Data> dic_Unit;
-
-
-    private static GameTableData _instance;
-    public static GameTableData Instance
-    {
-        get
-        {
-            // ¸¸¾à _instance°¡ Á¸ÀçÇÏÁö ¾ÊÀ» °æ¿ì »õ·Î »ı¼ºÇÑ´Ù.
-            if (_instance == null)
-            {
-                _instance = new GameTableData();
-            }
-            // _instance¸¦ ¹İÈ¯ÇÑ´Ù.
-            return _instance;
-        }
-    }
+    public int id;
+    public int res_name_id;
+    public int Desc;
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//¸ğµç µ¥ÀÌÅÍµéÀº ÇØ´ç µ¥ÀÌÅÍµéÀ» »ó¼Ó¹ŞÀ½...
+//ëª¨ë“  ë°ì´í„°ë“¤ì€ í•´ë‹¹ ë°ì´í„°ë“¤ì„ ìƒì†ë°›ìŒ...
 public class BaseData 
 {
     public int id;
