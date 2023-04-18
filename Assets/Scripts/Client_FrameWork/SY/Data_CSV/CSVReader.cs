@@ -114,9 +114,9 @@ public class CSVReader
         return rvalue;
     }
 
-    public static EnumTpye.eGrade Make_eGrade(string datum)
+    public static EnumType.eGrade Make_eGrade(string datum)
     {
-        var rvalue = (EnumTpye.eGrade)Enum.Parse(typeof(EnumTpye.eGrade), datum);
+        var rvalue = (EnumType.eGrade)Enum.Parse(typeof(EnumType.eGrade), datum);
         return rvalue;
     }
 

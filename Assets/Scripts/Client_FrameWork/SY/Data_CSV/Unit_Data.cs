@@ -9,6 +9,6 @@ public class Unit_Data : BaseData
     public int Unit_Atk;
     public int Unit_Def;
     public int Unit_AtkSpeed;
-    public EnumTpye.eGrade unitgrade;
+    public EnumType.eGrade unitgrade;
     public int Level;
 }

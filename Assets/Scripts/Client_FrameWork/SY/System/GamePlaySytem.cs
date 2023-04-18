@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class GamePlaySytem : MonoBehaviour
 {
-
-
-    EnumTpye.eGameStatus gametype;
-
-    private static GameTableData _instance;
-    public static GameTableData Instance
+    private static GamePlaySytem _instance;
+    public static GamePlaySytem Instance
     {
         get
         {
             // 만약 _instance가 존재하지 않을 경우 새로 생성한다.
             if (_instance == null)
             {
-                _instance = new GameTableData();
+                _instance = new GamePlaySytem();
                 //cur_nation_maxunitdata_list = new List<data_maxunit>();
             }
             // _instance를 반환한다.
@@ -24,26 +20,26 @@ public class GamePlaySytem : MonoBehaviour
         }
     }
 
+    EnumType.eGameStatus gametype;
 
     private void Awake()
     {
-
         GameTableData.Instance.dic_unitdata = CSVReader.Read_Unit_data("Unit_data.csv");
-       
+
         switch (gametype)
         {
-            case EnumTpye.eGameStatus.none:
+            case EnumType.eGameStatus.none:
                 break;
-            case EnumTpye.eGameStatus.read_data:
+            case EnumType.eGameStatus.read_data:
               
                 break;
-            case EnumTpye.eGameStatus.set_object:
+            case EnumType.eGameStatus.set_object:
                 break;
-            case EnumTpye.eGameStatus.Loading:
+            case EnumType.eGameStatus.Loading:
                 break;
-            case EnumTpye.eGameStatus.play:
+            case EnumType.eGameStatus.play:
                 break;
-            case EnumTpye.eGameStatus.suspend:
+            case EnumType.eGameStatus.suspend:
                 break;
             default:
                 break;
