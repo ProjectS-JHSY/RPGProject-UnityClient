@@ -330,13 +330,13 @@ TextureImporter:
       name: UI_Essential_10
       rect:
         serializedVersion: 2
-        x: 359
-        y: 108
-        width: 92
-        height: 88
+        x: 350
+        y: 143
+        width: 110
+        height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 12, y: 12, z: 12, w: 12}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -389,6 +389,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI_Essential_13
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 20
+        width: 116
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8cedc553323f8447aa8756b917dfe16
+      internalID: -1584894069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -405,6 +426,7 @@ TextureImporter:
       UI_Essential_10: -1119225517
       UI_Essential_11: -2068643058
       UI_Essential_12: 1948089006
+      UI_Essential_13: -1584894069
       UI_Essential_2: -297455040
       UI_Essential_3: 1667111258
       UI_Essential_4: -366571865
