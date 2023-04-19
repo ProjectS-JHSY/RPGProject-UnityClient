@@ -14,6 +14,11 @@ public class EnumType
         suspend,
     }
 
+    //게임 구성에 필요한 text를 desc_id로 매칭시켜 불러옴...
+    public enum Desc_Txt
+    {
+
+    }
 
     public enum eGrade
     {
@@ -22,5 +27,24 @@ public class EnumType
         Epic,
         Legend,
     }
+
+
+    public enum eUnittype
+    {
+        Combattype,
+        supporttype,
+        defensivetype,
+    }
+
+    public enum eUniteletype
+    {
+        Fire,
+        Water,
+        Earth,
+        Light,
+        darkness,
+    }
+
+
 
 }

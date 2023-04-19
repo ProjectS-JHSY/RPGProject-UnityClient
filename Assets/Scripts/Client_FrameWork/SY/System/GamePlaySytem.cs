@@ -34,6 +34,7 @@ public class GamePlaySytem : MonoBehaviour
     {
 
         GameTableData.Instance.dic_unitdata = CSVReader.Read_Unit_data("Unit_data.csv");
+        GameTableData.Instance.dic_desc = CSVReader.Read_Desc_data("Desc_data.csv");
 
         switch (gametype)
         {
@@ -87,7 +88,7 @@ public class GamePlaySytem : MonoBehaviour
         {
             if (curlodedent == 0)//.data_read
             {
-                GameEventManager.Send_GameStatusEvent(EnumType.eGameStatus.read_data);
+               // GameEventManager.Send_GameStatusEvent(EnumType.eGameStatus.read_data);
             }
             else if(curlodedent == 1)//.create object
             {
