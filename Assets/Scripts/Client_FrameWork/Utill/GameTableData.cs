@@ -10,7 +10,7 @@ public class GameTableData
 
 
     public Dictionary<int, Unit_Data> dic_unitdata;
-
+    public Dictionary<int, Desc_Data> dic_desc;
 
 
     private static GameTableData _instance;

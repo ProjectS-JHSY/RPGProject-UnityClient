@@ -120,8 +120,16 @@ public class CSVReader
         return rvalue;
     }
 
-
-
+    public static EnumType.eUnittype Make_eUnitType(string datum)
+    {
+        var rvalue = (EnumType.eUnittype)Enum.Parse(typeof(EnumType.eUnittype), datum);
+        return rvalue;
+    }
+    public static EnumType.eUniteletype Make_eUnitElementType(string datum)
+    {
+        var rvalue = (EnumType.eUniteletype)Enum.Parse(typeof(EnumType.eUniteletype), datum);
+        return rvalue;
+    }
 
     /// <summary>
     /// Read Unit Data...
@@ -139,21 +147,49 @@ public class CSVReader
             Unit_Data tmp_unitdata = new Unit_Data();
             tmp_unitdata.id = Make_Int(values[0]);
             tmp_unitdata.res_name_id = Make_Int(values[1]);
-            tmp_unitdata.Desc = Make_Int(values[2]);
-            tmp_unitdata.Unit_Hp = Make_Int(values[3]);
-            tmp_unitdata.Unit_stamina = Make_Int(values[4]);
-            tmp_unitdata.Unit_Atk = Make_Int(values[5]);
-            tmp_unitdata.Unit_Def = Make_Int(values[6]);
-            tmp_unitdata.Unit_AtkSpeed = Make_Int(values[7]);
-            tmp_unitdata.unitgrade = Make_eGrade(values[8]);
-            tmp_unitdata.Level = Make_Int(values[9]);
-
-
+            tmp_unitdata.unitgrade = Make_eGrade(values[2]);
+            tmp_unitdata.unittype = Make_eUnitType(values[3]);
+            tmp_unitdata.unit_elemntType = Make_eUnitElementType(values[4]);
+            tmp_unitdata.Desc = Make_Int(values[5]);
+            tmp_unitdata.Unit_Hp = Make_Int(values[6]);
+            tmp_unitdata.Unit_Atk = Make_Int(values[7]);
+            tmp_unitdata.Unit_Def = Make_Int(values[8]);
+            tmp_unitdata.Unit_AtkSpeed = Make_Int(values[9]);
+            tmp_unitdata.fatality_rate = Make_Int(values[10]);
+            tmp_unitdata.fatality_damage = Make_Int(values[11]);
+            tmp_unitdata.effective_resistance = Make_Int(values[12]);
+            tmp_unitdata.being_effective = Make_Int(values[13]);
+            tmp_unitdata.set_Level = Make_Int(values[14]);
+            tmp_unitdata.awaking = Make_Int(values[15]);
+            tmp_unitdata.my_char = Make_Bool(values[16]);
+            tmp_unitdata.leaderskill_id = Make_Int(values[17]);
             list.Add(tmp_unitdata.id, tmp_unitdata);
         }
         return list;
     }
-    
+    ///
+    /// Read Desc Data
+    ///
+    public static Dictionary<int, Desc_Data> Read_Desc_data(string file)
+    {
+        var list = new Dictionary<int, Desc_Data>();
+        var lines = Read_Lines(file, false);
+        if (lines.Length < 1) return list;
+        var header = Make_Header(lines[0]);
+        for (int i = 1; i < lines.Length; i++)
+        {
+            var values = Regex.Split(lines[i], SPLIT_RE);
+            if (values.Length == 0 || values[0] == "") continue;
+            Desc_Data tmp_unitdata = new Desc_Data();
+            tmp_unitdata.id = Make_Int(values[0]);
+            tmp_unitdata.Desc = values[1];
+            list.Add(tmp_unitdata.id, tmp_unitdata);
+        }
+        return list;
+    }
+
+
+
     ///
     /// Read Buliding Data
     ///

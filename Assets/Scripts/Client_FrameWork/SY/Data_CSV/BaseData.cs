@@ -8,5 +8,5 @@ public class BaseData
 {
     public int id;
     public int res_name_id;
-    public int Desc;
+    
 }
