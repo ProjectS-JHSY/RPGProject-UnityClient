@@ -36,8 +36,6 @@ public static class Util_Standard
         Sprite tmp_Result = null;
         string _resPath = _path + "/" + _resName;
 
-        var obj = Resources.Load(_resPath);
-
         tmp_Result = Resources.Load<Sprite>(_resPath);
 
         //Texture tmp_Result = (Texture)GameObject.Instantiate(tmp_ResultObj);
@@ -57,15 +55,39 @@ public static class Util_Standard
         return tmp_Resultobj;
     }
 
+    public static Sprite Load_ResourceAsSlicedSprite(ref Sprite[] sprites, string _path, int id , int firstID)
+    {
+        string _resPath = _path;
+
+        if(sprites == null)
+            sprites = Resources.LoadAll<Sprite>(_resPath);
+
+        for (int i=0;i<sprites.Length;i++)
+		{
+            if((id - firstID) == i)
+                return sprites[i];
+		}
+
+        return null;
+    }
+
+    private static Sprite[] UnitSprites = null;
+
 
     //resource/icon/해당 리소스 icon을 불러오는 함수
-    public static Sprite Load_resource_Unit_Sprites(string _resname)
-    {
-        //ex) icon_unit_11 <====== 유닛 스프라이트 저장할떄...
-        string _newresname = StringbuilderUtil("icon_unit_" + _resname);
-        Sprite _spr = Load_ResourceAsSprite("Icon", _newresname);
+
+    public static Sprite Load_resource_Unit_Sprites(int _id)
+	{
+        Sprite _spr = Load_ResourceAsSlicedSprite(ref UnitSprites,"Icon/Icon_unit",_id,1001);
         return _spr;
     }
 
+    public static Sprite Load_resource_Unit_Sprites(string _resname)
+    {
+        //ex) icon_unit_11 <====== 유닛 스프라이트 저장할떄...
+        string _sprname = StringbuilderUtil("icon_" + _resname);
+        Sprite _spr = Load_ResourceAsSprite("Icon/Icon_unit",_sprname);
+        return _spr;
+    }
    
 }

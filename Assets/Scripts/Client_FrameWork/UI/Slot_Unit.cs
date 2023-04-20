@@ -25,6 +25,7 @@ namespace Client_FrameWork.UI
 				var _data = (Unit_Data)data;
 				level_text.text = _data.set_Level.ToString();
 				//TODO : icon spirte 변경
+				icon.sprite = Util_Standard.Load_resource_Unit_Sprites(_data.id);
 			}
 
 			level_text.gameObject.SetActive(isNull);

@@ -6,137 +6,137 @@ using Client_FrameWork.UI;
 
 public class GamePlaySytem : MonoBehaviour
 {
-    EnumType.eGameStatus gametype;
+	EnumType.eGameStatus gametype;
 
-    private static GamePlaySytem _instance;
-    public static GamePlaySytem Instance
+	private static GamePlaySytem _instance;
+	public static GamePlaySytem Instance
 
-    {
-        get
-        {
-            // 占쏙옙占쏙옙 _instance占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占 占쏙옙占쏙옙 占쏙옙占쏙옙占싼댐옙.
-            if (_instance == null)
-            {
-                _instance = new GamePlaySytem();
-                //cur_nation_maxunitdata_list = new List<data_maxunit>();
-            }
-            // _instance占쏙옙 占쏙옙환占싼댐옙.
-            return _instance;
-        }
-    }
-
-    public static bool UpdateUnitInfo(Unit_Data data)
 	{
-        if(data != null)
-            Panel_UnitInfo.UpdateInfo(data);
-
-        return (data != null);
+		get
+		{
+			// 占쏙옙占쏙옙 _instance占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占 占쏙옙占쏙옙 占쏙옙占쏙옙占싼댐옙.
+			if (_instance == null)
+			{
+				_instance = new GamePlaySytem();
+				//cur_nation_maxunitdata_list = new List<data_maxunit>();
+			}
+			// _instance占쏙옙 占쏙옙환占싼댐옙.
+			return _instance;
+		}
 	}
 
-    public static string GetDescByID(int id)
-    {
-        return GameTableData.Instance.dic_desc[id].Desc;
-    }
+	public static bool UpdateUnitInfo(Unit_Data data)
+	{
+		if(data != null)
+			Panel_UnitInfo.UpdateInfo(data);
 
-    public static string GetStringByType(EnumType.eUnittype type)
-    {
-        switch (type)
-        {
-            case EnumType.eUnittype.Combattype:
-                return "�ы";
-            case EnumType.eUnittype.supporttype:
-                return "吏";
-            case EnumType.eUnittype.defensivetype:
-                return "諛⑹댄";
-            default:
-                return "";
-        }
-    }
+		return (data != null);
+	}
 
-    private void Awake()
-    {
+	public static string GetDescByID(int id)
+	{
+		return GameTableData.Instance.dic_desc[id].Desc;
+	}
 
-        GameTableData.Instance.dic_unitdata = CSVReader.Read_Unit_data("Unit_data.csv");
-        GameTableData.Instance.dic_desc = CSVReader.Read_Desc_data("Desc_data.csv");
-        GameTableData.Instance.dic_Skill = CSVReader.Read_Skill_data("Skill_data.csv");
+	public static string GetStringByType(EnumType.eUnittype type)
+	{
+		switch (type)
+		{
+			case EnumType.eUnittype.Combattype:
+				return "공격형";
+			case EnumType.eUnittype.supporttype:
+				return "지원형";
+			case EnumType.eUnittype.defensivetype:
+				return "방어형";
+			default:
+				return "타입 없음";
+		}
+	}
 
-        switch (gametype)
-        {
-            case EnumType.eGameStatus.none:
-                break;
-            case EnumType.eGameStatus.read_data:
-                break;
-            case EnumType.eGameStatus.set_object:
-                break;
-            case EnumType.eGameStatus.Loading:
-                break;
-            case EnumType.eGameStatus.play:
-                break;
-            case EnumType.eGameStatus.suspend:
-                break;
-            default:
-                break;
-        }
-        
-        run_createtiles();
+	private void Awake()
+	{
 
-       // GameEventManager.OnEvent_GameStatus += addreaddata; 예시
-    }
+		GameTableData.Instance.dic_unitdata = CSVReader.Read_Unit_data("Unit_data.csv");
+		GameTableData.Instance.dic_desc = CSVReader.Read_Desc_data("Desc_data.csv");
+		GameTableData.Instance.dic_Skill = CSVReader.Read_Skill_data("Skill_data.csv");
 
-    //private void addreaddata(EnumType.eGameStatus _gameStatus) 占쏙옙占쏙옙
-    //{
-    //    switch (_gameStatus)
-    //    {
-    //        case EnumType.eGameStatus.read_data:
-    //            GameTableData.Instance.dic_unitdata = CSVReader.Read_Unit_data("Unit_data.csv");
-    //            break;
-    //    }
-    //}
+		switch (gametype)
+		{
+			case EnumType.eGameStatus.none:
+				break;
+			case EnumType.eGameStatus.read_data:
+				break;
+			case EnumType.eGameStatus.set_object:
+				break;
+			case EnumType.eGameStatus.Loading:
+				break;
+			case EnumType.eGameStatus.play:
+				break;
+			case EnumType.eGameStatus.suspend:
+				break;
+			default:
+				break;
+		}
+		
+		run_createtiles();
 
-    private Coroutine cor_waitfor_createtile;
-    private void run_createtiles()
-    {
-        if (cor_waitfor_createtile != null) StopCoroutine(cor_waitfor_createtile);
-        cor_waitfor_createtile = StartCoroutine("cor_process_create");
-    }
+	   // GameEventManager.OnEvent_GameStatus += addreaddata; 예시
+	}
 
-    private IEnumerator cor_process_create()
-    {
-        int totalloadingcount = 6;
-        int curlodedent = 0;
+	//private void addreaddata(EnumType.eGameStatus _gameStatus) 占쏙옙占쏙옙
+	//{
+	//    switch (_gameStatus)
+	//    {
+	//        case EnumType.eGameStatus.read_data:
+	//            GameTableData.Instance.dic_unitdata = CSVReader.Read_Unit_data("Unit_data.csv");
+	//            break;
+	//    }
+	//}
 
-        while (totalloadingcount > curlodedent)
-        {
-            if (curlodedent == 0)//.data_read
-            {
-               // GameEventManager.Send_GameStatusEvent(EnumType.eGameStatus.read_data);
-            }
-            else if(curlodedent == 1)//.create object
-            {
+	private Coroutine cor_waitfor_createtile;
+	private void run_createtiles()
+	{
+		if (cor_waitfor_createtile != null) StopCoroutine(cor_waitfor_createtile);
+		cor_waitfor_createtile = StartCoroutine("cor_process_create");
+	}
 
-            }
-            else if (curlodedent == 2)//event....
-            {
+	private IEnumerator cor_process_create()
+	{
+		int totalloadingcount = 6;
+		int curlodedent = 0;
 
-            }
-            else if (curlodedent == 3)
-            {
+		while (totalloadingcount > curlodedent)
+		{
+			if (curlodedent == 0)//.data_read
+			{
+			   // GameEventManager.Send_GameStatusEvent(EnumType.eGameStatus.read_data);
+			}
+			else if(curlodedent == 1)//.create object
+			{
 
-            }
-            else if (curlodedent == 4)
-            {
+			}
+			else if (curlodedent == 2)//event....
+			{
 
-            }
-            else if (curlodedent == 5)
-            {
+			}
+			else if (curlodedent == 3)
+			{
 
-            }
-            else if (curlodedent == 6)
-            {
+			}
+			else if (curlodedent == 4)
+			{
 
-            }
-            curlodedent++;
-        }
-        yield return null;
-    }
+			}
+			else if (curlodedent == 5)
+			{
+
+			}
+			else if (curlodedent == 6)
+			{
+
+			}
+			curlodedent++;
+		}
+		yield return null;
+	}
 }
