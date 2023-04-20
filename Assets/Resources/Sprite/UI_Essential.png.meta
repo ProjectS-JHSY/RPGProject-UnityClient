@@ -393,12 +393,12 @@ TextureImporter:
       name: UI_Essential_13
       rect:
         serializedVersion: 2
-        x: 351
-        y: 20
-        width: 116
-        height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 84
+        y: 12
+        width: 79
+        height: 73
+      alignment: 9
+      pivot: {x: 0.4730916, y: 0.49757317}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -406,6 +406,111 @@ TextureImporter:
       bones: []
       spriteID: a8cedc553323f8447aa8756b917dfe16
       internalID: -1584894069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_14
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 13
+        width: 65
+        height: 67
+      alignment: 9
+      pivot: {x: 0.50545067, y: 0.54759157}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4e5b54f0980b941b229f6da5a988bf
+      internalID: -1761971745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_15
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 13
+        width: 65
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5054504, y: 0.554707}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd3a58d4a093894e86a500c32e12164
+      internalID: -1707689567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_16
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 13
+        width: 65
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5027255, y: 0.54949677}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89c120f4a16bb84f96493dcd94f59a7
+      internalID: 948456300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_17
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 13
+        width: 65
+        height: 68
+      alignment: 9
+      pivot: {x: 0.52180225, y: 0.55210185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11339d6f0cf11e408576c6e7c6e64aa
+      internalID: 464445499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_18
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 15
+        width: 67
+        height: 67
+      alignment: 9
+      pivot: {x: 0.53701556, y: 0.55023545}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93cc60db69a3ed249b8113ae53a73d8f
+      internalID: -1824943453
       vertices: []
       indices: 
       edges: []
@@ -427,6 +532,11 @@ TextureImporter:
       UI_Essential_11: -2068643058
       UI_Essential_12: 1948089006
       UI_Essential_13: -1584894069
+      UI_Essential_14: -1761971745
+      UI_Essential_15: -1707689567
+      UI_Essential_16: 948456300
+      UI_Essential_17: 464445499
+      UI_Essential_18: -1824943453
       UI_Essential_2: -297455040
       UI_Essential_3: 1667111258
       UI_Essential_4: -366571865

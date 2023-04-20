@@ -2,13 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Client_FrameWork.UI;
 
 public class GamePlaySytem : MonoBehaviour
 {
-
-   
-
-
     EnumType.eGameStatus gametype;
 
     private static GamePlaySytem _instance;
@@ -17,18 +14,44 @@ public class GamePlaySytem : MonoBehaviour
     {
         get
         {
-            // ¸¸¾à _instance°¡ Á¸ÀçÇÏÁö ¾ÊÀ» °æ¿ì »õ·Î »ı¼ºÇÑ´Ù.
+            // ï¿½ï¿½ï¿½ï¿½ _instanceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
             if (_instance == null)
             {
                 _instance = new GamePlaySytem();
                 //cur_nation_maxunitdata_list = new List<data_maxunit>();
             }
-            // _instance¸¦ ¹İÈ¯ÇÑ´Ù.
+            // _instanceï¿½ï¿½ ï¿½ï¿½È¯ï¿½Ñ´ï¿½.
             return _instance;
         }
     }
 
-  
+    public static bool UpdateUnitInfo(Unit_Data data)
+	{
+        if(data != null)
+            Panel_UnitInfo.UpdateInfo(data);
+
+        return (data != null);
+	}
+
+    public static string GetDescByID(int id)
+    {
+        return GameTableData.Instance.dic_desc[id].Desc;
+    }
+
+    public static string GetStringByType(EnumType.eUnittype type)
+    {
+        switch (type)
+        {
+            case EnumType.eUnittype.Combattype:
+                return "ì „íˆ¬í˜•";
+            case EnumType.eUnittype.supporttype:
+                return "ì§€ì›í˜•";
+            case EnumType.eUnittype.defensivetype:
+                return "ë°©ì–´í˜•";
+            default:
+                return "íƒ€ì…ì—†ìŒ";
+        }
+    }
 
     private void Awake()
     {
@@ -59,10 +82,10 @@ public class GamePlaySytem : MonoBehaviour
        
         run_createtiles();
 
-       // GameEventManager.OnEvent_GameStatus += addreaddata; ¿¹½Ã
+       // GameEventManager.OnEvent_GameStatus += addreaddata; ï¿½ï¿½ï¿½ï¿½
     }
 
-    //private void addreaddata(EnumType.eGameStatus _gameStatus) ¿¹½Ã
+    //private void addreaddata(EnumType.eGameStatus _gameStatus) ï¿½ï¿½ï¿½ï¿½
     //{
     //    switch (_gameStatus)
     //    {
@@ -114,8 +137,9 @@ public class GamePlaySytem : MonoBehaviour
             {
 
             }
+            curlodedent++;
         }
-        curlodedent++;
+        
 
         yield return null;
     }
