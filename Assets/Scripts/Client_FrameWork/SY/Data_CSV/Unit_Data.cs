@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Unit_Data : BaseData
 {
-    public EnumType.eGrade unitgrade;//등급
+    public EnumType.eStarGrade unitgrade;//등급
     public EnumType.eUnittype unittype; //유닛타입
     public EnumType.eUniteletype unit_elemntType;//유닛 속성...
     public int Desc;
@@ -20,6 +20,5 @@ public class Unit_Data : BaseData
     public int awaking;
     public bool my_char;
     public int leaderskill_id;
-   
-
+    public List<int> have_skill;
 }

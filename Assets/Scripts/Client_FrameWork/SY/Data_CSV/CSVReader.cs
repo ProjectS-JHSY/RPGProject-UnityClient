@@ -113,7 +113,55 @@ public class CSVReader
         }
         return rvalue;
     }
+    public static string[] Make_Array(string data)
+    {
+        char[] splitter2 = { '?' };
+        string trimline = data.TrimStart(TRIM_CHARS).TrimEnd(TRIM_CHARS).Replace("\\", "");
+        string[] rvalues = trimline.Split(splitter2);
+        return rvalues;
+    }
 
+    public static List<string> Make_List_String(string data)
+    {
+        if (data == "")
+            return null;
+
+        string[] values = Make_Array(data);
+        List<string> rvalues = new List<string>();
+        foreach (string value in values)
+        {
+            rvalues.Add(value);
+        }
+        return rvalues;
+    }
+  
+    public static List<int> Make_List_Int(string data)
+    {
+        if (data == "" || data == "none")
+            return null;
+        string[] values = Make_Array(data);
+        List<int> rvalues = new List<int>();
+        foreach (string value in values)
+        {
+            int fvalue = int.Parse(value);
+            rvalues.Add(fvalue);
+        }
+        return rvalues;
+    }
+
+    public static int[] Make_Array_Int(string data)
+    {
+        if (data == "" || data == "none")
+            return null;
+
+        string[] values = Make_Array(data);
+        int[] rvalues = new int[values.Length];
+        for (int i = 0; i < values.Length; i++)
+        {
+            rvalues[i] = int.Parse(values[i]);
+        }
+        return rvalues;
+    }
     public static EnumType.eGrade Make_eGrade(string datum)
     {
         var rvalue = (EnumType.eGrade)Enum.Parse(typeof(EnumType.eGrade), datum);
@@ -128,6 +176,16 @@ public class CSVReader
     public static EnumType.eUniteletype Make_eUnitElementType(string datum)
     {
         var rvalue = (EnumType.eUniteletype)Enum.Parse(typeof(EnumType.eUniteletype), datum);
+        return rvalue;
+    }
+    public static EnumType.eStarGrade Make_eUnitStartGrade(string datum)
+    {
+        var rvalue = (EnumType.eStarGrade)Enum.Parse(typeof(EnumType.eStarGrade), datum);
+        return rvalue;
+    }
+    public static EnumType.eSkill_Type Make_eSkillType(string datum)
+    {
+        var rvalue = (EnumType.eSkill_Type)Enum.Parse(typeof(EnumType.eSkill_Type), datum);
         return rvalue;
     }
 
@@ -147,7 +205,7 @@ public class CSVReader
             Unit_Data tmp_unitdata = new Unit_Data();
             tmp_unitdata.id = Make_Int(values[0]);
             tmp_unitdata.res_name_id = Make_Int(values[1]);
-            tmp_unitdata.unitgrade = Make_eGrade(values[2]);
+            tmp_unitdata.unitgrade = Make_eUnitStartGrade(values[2]);
             tmp_unitdata.unittype = Make_eUnitType(values[3]);
             tmp_unitdata.unit_elemntType = Make_eUnitElementType(values[4]);
             tmp_unitdata.Desc = Make_Int(values[5]);
@@ -163,6 +221,7 @@ public class CSVReader
             tmp_unitdata.awaking = Make_Int(values[15]);
             tmp_unitdata.my_char = Make_Bool(values[16]);
             tmp_unitdata.leaderskill_id = Make_Int(values[17]);
+            tmp_unitdata.have_skill = Make_List_Int(values[18]);
             list.Add(tmp_unitdata.id, tmp_unitdata);
         }
         return list;
@@ -187,8 +246,32 @@ public class CSVReader
         }
         return list;
     }
-
-
+    ///
+    /// Read Skill Data
+    ///
+    public static Dictionary<int, Skill_Data> Read_Skill_data(string file)
+    {
+        var list = new Dictionary<int, Skill_Data>();
+        var lines = Read_Lines(file, false);
+        if (lines.Length < 1) return list;
+        var header = Make_Header(lines[0]);
+        for (int i = 1; i < lines.Length; i++)
+        {
+            var values = Regex.Split(lines[i], SPLIT_RE);
+            if (values.Length == 0 || values[0] == "") continue;
+            Skill_Data tmp_unitdata =new Skill_Data();
+            tmp_unitdata.id = Make_Int(values[0]);
+            tmp_unitdata.skill_icon = Make_Int(values[1]);
+            tmp_unitdata.skill_desc = Make_Int(values[2]);
+            tmp_unitdata.skill_name_desc = Make_Int(values[3]);
+            tmp_unitdata.skill_type =Make_eSkillType(values[4]);
+            tmp_unitdata.skill_cool = Make_Int(values[5]);
+            tmp_unitdata.MaxLevel = Make_Int(values[6]);
+            tmp_unitdata.cost = Make_Int(values[7]);
+            list.Add(tmp_unitdata.id, tmp_unitdata);
+        }
+        return list;
+    }
 
     ///
     /// Read Buliding Data

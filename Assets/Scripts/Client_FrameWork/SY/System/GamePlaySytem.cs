@@ -14,13 +14,13 @@ public class GamePlaySytem : MonoBehaviour
     {
         get
         {
-            // ���� _instance�� �������� ���� ��� ���� �����Ѵ�.
+            // 占쏙옙占쏙옙 _instance占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占 占쏙옙占쏙옙 占쏙옙占쏙옙占싼댐옙.
             if (_instance == null)
             {
                 _instance = new GamePlaySytem();
                 //cur_nation_maxunitdata_list = new List<data_maxunit>();
             }
-            // _instance�� ��ȯ�Ѵ�.
+            // _instance占쏙옙 占쏙옙환占싼댐옙.
             return _instance;
         }
     }
@@ -43,13 +43,13 @@ public class GamePlaySytem : MonoBehaviour
         switch (type)
         {
             case EnumType.eUnittype.Combattype:
-                return "전투형";
+                return "�ы";
             case EnumType.eUnittype.supporttype:
-                return "지원형";
+                return "吏";
             case EnumType.eUnittype.defensivetype:
-                return "방어형";
+                return "諛⑹댄";
             default:
-                return "타입없음";
+                return "";
         }
     }
 
@@ -58,13 +58,13 @@ public class GamePlaySytem : MonoBehaviour
 
         GameTableData.Instance.dic_unitdata = CSVReader.Read_Unit_data("Unit_data.csv");
         GameTableData.Instance.dic_desc = CSVReader.Read_Desc_data("Desc_data.csv");
+        GameTableData.Instance.dic_Skill = CSVReader.Read_Skill_data("Skill_data.csv");
 
         switch (gametype)
         {
             case EnumType.eGameStatus.none:
                 break;
             case EnumType.eGameStatus.read_data:
-              
                 break;
             case EnumType.eGameStatus.set_object:
                 break;
@@ -77,15 +77,13 @@ public class GamePlaySytem : MonoBehaviour
             default:
                 break;
         }
-
-
-       
+        
         run_createtiles();
 
-       // GameEventManager.OnEvent_GameStatus += addreaddata; ����
+       // GameEventManager.OnEvent_GameStatus += addreaddata; 예시
     }
 
-    //private void addreaddata(EnumType.eGameStatus _gameStatus) ����
+    //private void addreaddata(EnumType.eGameStatus _gameStatus) 占쏙옙占쏙옙
     //{
     //    switch (_gameStatus)
     //    {
@@ -139,8 +137,6 @@ public class GamePlaySytem : MonoBehaviour
             }
             curlodedent++;
         }
-        
-
         yield return null;
     }
 }
