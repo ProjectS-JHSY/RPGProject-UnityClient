@@ -56,4 +56,16 @@ public static class Util_Standard
         GameObject tmp_Resultobj = GameObject.Instantiate(tmp_Result);
         return tmp_Resultobj;
     }
+
+
+    //resource/icon/해당 리소스 icon을 불러오는 함수
+    public static Sprite Load_resource_Unit_Sprites(string _resname)
+    {
+        //ex) icon_unit_11 <====== 유닛 스프라이트 저장할떄...
+        string _newresname = StringbuilderUtil("icon_unit_" + _resname);
+        Sprite _spr = Load_ResourceAsSprite("Icon", _newresname);
+        return _spr;
+    }
+
+   
 }
