@@ -45,6 +45,19 @@ public class EnumType
         darkness,
     }
 
-
-
+    public enum eStarGrade
+    {
+        One,
+        Two,
+        Three,
+        Four,
+        Five,
+        Six,
+    }
+    public enum eSkill_Type
+    {
+       Buff,
+       DeBuff,
+       Atk,
+    }
 }
