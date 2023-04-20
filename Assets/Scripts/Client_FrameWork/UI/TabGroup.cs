@@ -1,58 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class TabGroup : MonoBehaviour 
+namespace Client_FrameWork.UI
 {
-	private TabButton selectedTab = null;
-	private List<TabButton> tabButtons = new List<TabButton>();
-	[SerializeField] private List<GameObject> tabContents = new List<GameObject>();
-
-	[SerializeField] private Color _normalColor;
-	[SerializeField] private Color _hoverColor;
-	[SerializeField] private Color _selectedColor;
-
-	public void Subscribe(TabButton button)
+	public class TabGroup : MonoBehaviour 
 	{
-		tabButtons.Add(button);
-	}
+		private TabButton selectedTab = null;
+		private List<TabButton> tabButtons = new List<TabButton>();
+		[SerializeField] private List<GameObject> tabContents = new List<GameObject>();
 
-	public void OnTabEnter(TabButton button)
-	{
-		resetTabButtons();
-		if (selectedTab == null || button != selectedTab)
-			button.BackgroundColor = _hoverColor;
-	}
+		[SerializeField] private Color _normalColor;
+		[SerializeField] private Color _hoverColor;
+		[SerializeField] private Color _selectedColor;
 
-	public void OnTabClick(TabButton button)
-	{
-		selectedTab = button;
-		resetTabButtons();
-		button.BackgroundColor = _selectedColor;
-
-		int index = button.transform.GetSiblingIndex();
-
-		for(int i = 0; i < tabContents.Count; i++)
+		public void Subscribe(TabButton button)
 		{
-			tabContents[i].SetActive(i == index);
+			tabButtons.Add(button);
 		}
 
-	}
-
-	public void OnTabExit(TabButton button)
-	{
-		resetTabButtons();
-	}
-
-	private void resetTabButtons()
-	{
-		foreach(TabButton button in tabButtons)
+		public void OnTabEnter(TabButton button)
 		{
-			if(selectedTab != null && button == selectedTab)
-				continue;
-			button.BackgroundColor = _normalColor;
+			resetTabButtons();
+			if (selectedTab == null || button != selectedTab)
+				button.BackgroundColor = _hoverColor;
 		}
+
+		public void OnTabClick(TabButton button)
+		{
+			selectedTab = button;
+			resetTabButtons();
+			button.BackgroundColor = _selectedColor;
+
+			int index = button.transform.GetSiblingIndex();
+
+			for(int i = 0; i < tabContents.Count; i++)
+			{
+				tabContents[i].SetActive(i == index);
+			}
+
+		}
+
+		public void OnTabExit(TabButton button)
+		{
+			resetTabButtons();
+		}
+
+		private void resetTabButtons()
+		{
+			foreach(TabButton button in tabButtons)
+			{
+				if(selectedTab != null && button == selectedTab)
+					continue;
+				button.BackgroundColor = _normalColor;
+			}
+		}
+
 	}
 
 }

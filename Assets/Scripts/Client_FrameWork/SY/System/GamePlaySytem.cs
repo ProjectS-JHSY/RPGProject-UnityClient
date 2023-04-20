@@ -2,13 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Client_FrameWork.UI;
 
 public class GamePlaySytem : MonoBehaviour
 {
-
-   
-
-
     EnumType.eGameStatus gametype;
 
     private static GamePlaySytem _instance;
@@ -17,18 +14,44 @@ public class GamePlaySytem : MonoBehaviour
     {
         get
         {
-            // ���� _instance�� �������� ���� ��� ���� �����Ѵ�.
+            // 占쏙옙占쏙옙 _instance占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占 占쏙옙占쏙옙 占쏙옙占쏙옙占싼댐옙.
             if (_instance == null)
             {
                 _instance = new GamePlaySytem();
                 //cur_nation_maxunitdata_list = new List<data_maxunit>();
             }
-            // _instance�� ��ȯ�Ѵ�.
+            // _instance占쏙옙 占쏙옙환占싼댐옙.
             return _instance;
         }
     }
 
-  
+    public static bool UpdateUnitInfo(Unit_Data data)
+	{
+        if(data != null)
+            Panel_UnitInfo.UpdateInfo(data);
+
+        return (data != null);
+	}
+
+    public static string GetDescByID(int id)
+    {
+        return GameTableData.Instance.dic_desc[id].Desc;
+    }
+
+    public static string GetStringByType(EnumType.eUnittype type)
+    {
+        switch (type)
+        {
+            case EnumType.eUnittype.Combattype:
+                return "�ы";
+            case EnumType.eUnittype.supporttype:
+                return "吏";
+            case EnumType.eUnittype.defensivetype:
+                return "諛⑹댄";
+            default:
+                return "";
+        }
+    }
 
     private void Awake()
     {
@@ -54,10 +77,13 @@ public class GamePlaySytem : MonoBehaviour
             default:
                 break;
         }
-       // GameEventManager.OnEvent_GameStatus += addreaddata; ����
+        
+        run_createtiles();
+
+       // GameEventManager.OnEvent_GameStatus += addreaddata; 예시
     }
 
-    //private void addreaddata(EnumType.eGameStatus _gameStatus) ����
+    //private void addreaddata(EnumType.eGameStatus _gameStatus) 占쏙옙占쏙옙
     //{
     //    switch (_gameStatus)
     //    {
