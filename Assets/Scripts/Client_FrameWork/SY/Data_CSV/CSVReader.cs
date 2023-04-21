@@ -272,7 +272,28 @@ public class CSVReader
         }
         return list;
     }
-
+    ///
+    /// Read LevelUp Data
+    ///
+    public static Dictionary<int, Unit_Level_Data> Read_Levelup_data(string file)
+    {
+        var list = new Dictionary<int, Unit_Level_Data>();
+        var lines = Read_Lines(file, false);
+        if (lines.Length < 1) return list;
+        var header = Make_Header(lines[0]);
+        for (int i = 1; i < lines.Length; i++)
+        {
+            var values = Regex.Split(lines[i], SPLIT_RE);
+            if (values.Length == 0 || values[0] == "") continue;
+            Unit_Level_Data tmp_unitdata = new Unit_Level_Data();
+            tmp_unitdata.id = Make_Int(values[0]);
+            tmp_unitdata.current_id = Make_Int(values[1]);
+            tmp_unitdata.need_xp = Make_Int(values[2]);
+            list.Add(tmp_unitdata.id, tmp_unitdata);
+        }
+        return list;
+    }
+    /// 
     ///
     /// Read Buliding Data
     ///
