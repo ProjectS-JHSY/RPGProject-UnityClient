@@ -72,13 +72,19 @@ public static class Util_Standard
     }
 
     private static Sprite[] UnitSprites = null;
-
+    private static Sprite[] SkillSprites = null;
 
     //resource/icon/해당 리소스 icon을 불러오는 함수
 
     public static Sprite Load_resource_Unit_Sprites(int _id)
 	{
         Sprite _spr = Load_ResourceAsSlicedSprite(ref UnitSprites,"Icon/Icon_unit",_id,1001);
+        return _spr;
+    }
+
+    public static Sprite Load_resource_Skill_Sprites(int _id)
+    {
+        Sprite _spr = Load_ResourceAsSlicedSprite(ref SkillSprites, "Icon/Icon_skill", _id, 11);
         return _spr;
     }
 

@@ -515,6 +515,258 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UI_Essential_19
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 468
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f94fb964ede8e4a907143ed5108fdb
+      internalID: 1891674206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_20
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 468
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be03a778723aa154587d12024697276e
+      internalID: -105410643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_21
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 434
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a6f970e8d6101448b549619a7b939d
+      internalID: 2069739742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_22
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 434
+        width: 46
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a2c7ea911c79340945d1f35ae2c026
+      internalID: -440933781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_23
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 400
+        width: 59
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6dfaddc12fdd3f4ba9b41d97db0b781
+      internalID: 796064016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_24
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 400
+        width: 59
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a0bb0f0614e7f4598ae282edbfdc7c
+      internalID: 417181449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_25
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 364
+        width: 71
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 224fc6aa186292f4ba6b63f8aba6077a
+      internalID: 1711896958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_26
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 364
+        width: 71
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e053bdd228fcf74c8f738fdd65cb6c3
+      internalID: -743310398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_27
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 329
+        width: 82
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef633bdea37cb2845803d41752e33563
+      internalID: 1913919792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_28
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 329
+        width: 82
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45e78ab4b22eaa42acc5ee38e9b4301
+      internalID: -630298991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_29
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 295
+        width: 93
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbcc4c1c1f04b2e4da0ae02c441358f8
+      internalID: 1978993103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Essential_30
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 295
+        width: 93
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75810a351b6c5f48becce8e616ff6bd
+      internalID: 424518513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -537,8 +789,20 @@ TextureImporter:
       UI_Essential_16: 948456300
       UI_Essential_17: 464445499
       UI_Essential_18: -1824943453
+      UI_Essential_19: 1891674206
       UI_Essential_2: -297455040
+      UI_Essential_20: -105410643
+      UI_Essential_21: 2069739742
+      UI_Essential_22: -440933781
+      UI_Essential_23: 796064016
+      UI_Essential_24: 417181449
+      UI_Essential_25: 1711896958
+      UI_Essential_26: -743310398
+      UI_Essential_27: 1913919792
+      UI_Essential_28: -630298991
+      UI_Essential_29: 1978993103
       UI_Essential_3: 1667111258
+      UI_Essential_30: 424518513
       UI_Essential_4: -366571865
       UI_Essential_5: -1684381502
       UI_Essential_6: 224833210

@@ -16,7 +16,7 @@ namespace Client_FrameWork.UI
 		[SerializeField] private Image icon;
 
 		[SerializeField] private TMP_Text level_text;
-		protected override void display(BaseData data)
+		protected override void updateSlot(BaseData data)
 		{
 			var isNull = (data != null);
 
@@ -44,6 +44,8 @@ namespace Client_FrameWork.UI
 
 					selectedSlot = this;
 					highlight.color = Color.yellow;
+
+					GamePlaySytem.UpdateSkillList(UnitContainer.Units[transform.GetSiblingIndex()]);
 				}
 			}
 			

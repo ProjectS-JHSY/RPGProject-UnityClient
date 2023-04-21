@@ -33,6 +33,22 @@ public class GamePlaySytem : MonoBehaviour
 		return (data != null);
 	}
 
+	public static bool UpdateSkillInfo(Skill_Data data)
+	{
+		if (data != null)
+			Panel_SkillInfo.UpdateSkillInfo(data);
+
+		return (data != null);
+	}
+
+	public static bool UpdateSkillList(Unit_Data data)
+	{
+		if (data != null)
+			Panel_SkillInfo.UpdateSkilList(data);
+
+		return (data != null);
+	}
+
 	public static string GetDescByID(int id)
 	{
 		return GameTableData.Instance.dic_desc[id].Desc;
