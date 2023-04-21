@@ -44,15 +44,15 @@ public class EnumType
         Light,
         darkness,
     }
-
+    //해당 enum에 할당된 값들은 해당 등급들의 MaxLevel..
     public enum eStarGrade
     {
-        One,
-        Two,
-        Three,
-        Four,
-        Five,
-        Six,
+        One = 15,
+        Two = 20, 
+        Three = 25,
+        Four = 30,
+        Five = 35,
+        Six = 40,
     }
     public enum eSkill_Type
     {
@@ -60,4 +60,12 @@ public class EnumType
        DeBuff,
        Atk,
     }
+
+    public enum eWorld_Status
+    {
+        Cloesd,
+        Open,
+        Clear,
+    }
+
 }

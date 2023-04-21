@@ -59,6 +59,7 @@ public class GamePlaySytem : MonoBehaviour
 		GameTableData.Instance.dic_unitdata = CSVReader.Read_Unit_data("Unit_data.csv");
 		GameTableData.Instance.dic_desc = CSVReader.Read_Desc_data("Desc_data.csv");
 		GameTableData.Instance.dic_Skill = CSVReader.Read_Skill_data("Skill_data.csv");
+		GameTableData.Instance.dic_Unitlevelup = CSVReader.Read_Levelup_data("Unit_LevelUp_data.csv");
 
 		switch (gametype)
 		{
