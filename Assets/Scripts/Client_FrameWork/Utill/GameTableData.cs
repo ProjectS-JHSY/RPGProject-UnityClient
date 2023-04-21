@@ -12,6 +12,7 @@ public class GameTableData
     public Dictionary<int, Unit_Data> dic_unitdata;
     public Dictionary<int, Desc_Data> dic_desc;
     public Dictionary<int, Skill_Data> dic_Skill;
+    public Dictionary<int, Unit_Level_Data> dic_Unitlevelup;
 
     private static GameTableData _instance;
     public static GameTableData Instance
