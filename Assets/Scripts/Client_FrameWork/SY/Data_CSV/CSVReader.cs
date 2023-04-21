@@ -262,8 +262,8 @@ public class CSVReader
             Skill_Data tmp_unitdata =new Skill_Data();
             tmp_unitdata.id = Make_Int(values[0]);
             tmp_unitdata.skill_icon = Make_Int(values[1]);
-            tmp_unitdata.skill_desc = Make_Int(values[2]);
-            tmp_unitdata.skill_name_desc = Make_Int(values[3]);
+            tmp_unitdata.skill_name_desc = Make_Int(values[2]);
+            tmp_unitdata.skill_desc = Make_Int(values[3]);
             tmp_unitdata.skill_type =Make_eSkillType(values[4]);
             tmp_unitdata.skill_cool = Make_Int(values[5]);
             tmp_unitdata.MaxLevel = Make_Int(values[6]);
