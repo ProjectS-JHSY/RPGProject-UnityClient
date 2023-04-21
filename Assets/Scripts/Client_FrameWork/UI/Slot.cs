@@ -10,13 +10,13 @@ namespace Client_FrameWork.UI
 	{
 		public RectTransform rectTransform { get { return (RectTransform)gameObject.transform; } }
 
-		public void Display(BaseData data) { display(data); }
+		public void UpdateSlot(BaseData data) { updateSlot(data); }
 
 		public virtual void OnPointerClick(PointerEventData eventData) { }
 		public virtual void OnPointerEnter(PointerEventData eventData) { }
 		public virtual void OnPointerExit(PointerEventData eventData) { }
 
-		protected virtual void display(BaseData data) { }
+		protected virtual void updateSlot(BaseData data) { }
 
 	}
 }

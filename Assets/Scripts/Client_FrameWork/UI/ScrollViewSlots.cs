@@ -11,6 +11,11 @@ namespace Client_FrameWork.UI
 		[SerializeField] private Vector2 margin;
 		[SerializeField] Slot[] slots;
 
+		protected override void OnEnable()
+		{
+			slots[0].OnPointerClick(null);
+		}
+
 		protected override void Awake()
 		{
 			base.Awake();
@@ -27,7 +32,7 @@ namespace Client_FrameWork.UI
 			for (int i = 0; i < slots.Length; i++)
 			{
 				if (i < datas.Count)
-					slots[i].Display(datas[i]);
+					slots[i].UpdateSlot(datas[i]);
 			}
 		}
 	}
